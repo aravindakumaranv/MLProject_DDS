@@ -1,0 +1,35 @@
+# Predict hotel booking cancellations
+
+This data-set is based on data obtained here: https://www.sciencedirect.com/science/article/pii/S2352340918315191
+The paper above also provides a detailed description of the columns.
+
+The dataset has extensive information on around 120'000 hotel bookings.
+You have a certain degree of freedom in deciding what you want to extract from this data-set.
+A possible proposal is the following:
+    * A binary classification model to predict whether a booking will be cancelled (column is_cancelled).
+      In this case, you should remove columns reservation_status (which would contain 'Cancelled' for cancelled bookings) and reservation_status_date.
+    * For cancelled bookings, you could predict how many days in advance the guest cancels (a regression problem).
+    * Combining the two above models, you could create a nice decision support tool: given a booking, your tool could tell whether it will be cancelled (or give a probability).
+      If you think the booking will be cancelled, you can also predict when this will happen.
+      Such a tool could then be used on any given day to check how many of the current reservations are likely to be cancelled and overbook accordingly.
+
+## Highlights
+
+* The data is clean.
+* The data has some categorical columns.
+* If you predict cancellations, the data is slightly unbalanced: around 36% of reservations are cancelled.
+
+## Recommendations
+
+After performing an initial data exploration, remember to only present in your project report the **interesting** finds, if any.
+The presentation of data (via a textual description, tables or plots) should be short and informative.
+
+In evaluating this project I am more interested in your correct application of model selection methodologies than in the performance of your model.
+
+If your model has hyperparameters, I am more interested that your model selection procedure took them into account, even if you only try a few possible values for them.
+Hyperparameter selection and model training shall not use all your computing resources for one week, but it should be set up "as if" you had access to a large computational infrastructure.
+The only difference should be in the number of hyperparameter configurations evaluated; not in the rigour of the methodology used.
+
+You should choose which classification and/or regression metrics to use (and motivate your choice!).
+Reference: https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics
+Reference: https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics
