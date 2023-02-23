@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.metrics import confusion_matrix
 import plotly.express as px
 import plotly.graph_objects as go
 
@@ -132,8 +132,3 @@ def plot_confusion_matrix(true_values, predicted_values):
     )
     fig.update_layout(width=500, height=400)
     fig.show()
-    
-def generate_classification_report(true_values, predicted_values, target_names):
-    return classification_report(
-        true_values, predicted_values, target_names
-    )
